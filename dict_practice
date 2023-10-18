@@ -1,0 +1,121 @@
+# dict functions
+
+# 1. clear() and 2. copy() same as list and set
+
+# 3. get() - takes key as argument and returns value if the key is a member of
+# dict
+place_detail = {
+    "name": "Boudha Stupa",
+    "city": "Kathmandu",
+    "historical_important": "Most Famouse Religious Site of Kathmandu",
+}
+print("Value of name:", place_detail.get("name"))
+print("Value of city:", place_detail.get("city"))
+print("")
+
+# 5. items() - returns the key-value pair of dict
+orders = {
+    "order_id": 123,
+    "order_code": "ODR202207",
+    "order_item": "Tool Box and Repair Kits",
+    "order_at": "2022-07-18",
+    "order_by": "Milan Bhujel",
+    "price": 2500.00
+}
+print("Items:", orders.items())
+print("")
+
+# 6. keys() - returns all keys of dict
+print(orders.keys())
+print("")
+
+# 7. values() - returns all values of keys available
+print(orders.values())
+print("")
+
+# 8. pop() - removes the specified key-value from the dict and returns the value
+kits = {
+    "brand": "Jade",
+    "tools": ["screw", "node", "cutter", "pin", "pliers"],
+    "price": 2200.00,
+    "made": "Made in Japan",
+    "certification": "ISO Certified"
+}
+print("Before:", kits)
+print(kits.pop("tools"))
+print(kits.pop("made"))
+print("After:", kits)
+print("")
+
+# 9. popitem() - removes the last inserted item (LIFO) and returns in key-value pair
+kits = {
+    "brand": "Jade",
+    "tools": ["screw", "node", "cutter", "pin", "pliers"],
+    "price": 2200.00,
+    "made": "Made in Japan",
+    "certification": "ISO Certified"
+}
+print("Before:", kits)
+print(kits.popitem())
+print(kits.popitem())
+print("After:", kits)
+print("")
+
+# if key-value or key is not available or dict is empty then raise Exception
+# in both pop() and popitem()
+
+# 10. setdefault() - takes two paramter - first parameter key and second parameter
+# value which is optional. if value is not pass in second parameter then put None as a
+# default value
+
+item_details = {
+    "item_title": "Hamlet",
+    "category": "Novel",
+    "genre": "Politics and Epic",
+    "price": 1500.00
+}
+# case one - only key
+print("Before:", item_details)
+item_details.setdefault("isbn")
+item_details.setdefault("author")
+print("After:", item_details)
+print("")
+# case two - both key and value
+print("Before:", item_details)
+item_details.setdefault("pages", 800)
+item_details.setdefault("editition", "3rd Edition")
+print("After:", item_details)
+print("")
+# case three - passed existing key or key-value - do nothing
+print("Before:", item_details)
+item_details.setdefault("isbn", "22-2022-BOOK")
+item_details.setdefault("author", "Sandesh Tamang")
+item_details.setdefault("pages", 700)
+item_details.setdefault("editition", "5th Edition")
+print("After:", item_details)
+print("")
+# 11. update() - to update values of keys in dict
+# if new key-value pair is added along with/without existing key-value
+# then adds them to the last of dict
+print("Before:", item_details)
+data = {
+    "isbn":"22-2022-BOOK",
+    "author": "Sandesh Tamang",
+    "publication": "James Publication"
+}
+item_details.update(data)
+print("After:", item_details)
+print("")
+
+# 11. fromkeys() - takes parameter one key (iterable) and other value
+# keeps value same to all keys and creates new dict
+items = ["pen", "pencil", "book"]
+value = 200.00
+result = dict.fromkeys(items, value)
+print(result)
+print("")
+
+# Task minimum 5 examples of all function
+
+
+
